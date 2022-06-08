@@ -88,13 +88,13 @@ public class CameraFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_camera, container, false);
         imageView = view.findViewById(R.id.imageView3);
-        int cameraPermissionStatus = ContextCompat.checkSelfPermission(getActivity().getApplicationContext(), Manifest.permission.CAMERA);
-        int storagePermissionStatus = ContextCompat.checkSelfPermission(getActivity().getApplicationContext(), Manifest.permission.WRITE_EXTERNAL_STORAGE);
+        int cameraPermissionStatus = ContextCompat.checkSelfPermission(getActivity(), Manifest.permission.CAMERA);
+        int storagePermissionStatus = ContextCompat.checkSelfPermission(getActivity(), Manifest.permission.WRITE_EXTERNAL_STORAGE);
         if (cameraPermissionStatus == PackageManager.PERMISSION_GRANTED && storagePermissionStatus == PackageManager.PERMISSION_GRANTED) {
             isWork = true;
         } else {
             // Выполняется запрос к пользователь на получение необходимых разрешений
-            ActivityCompat.requestPermissions((Activity) getActivity().getApplicationContext(), new String[] {Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE},
+            ActivityCompat.requestPermissions(getActivity(), new String[] {Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE},
                     REQUEST_CODE_PERMISSION_CAMERA);
         }
 
@@ -104,7 +104,7 @@ public class CameraFragment extends Fragment {
             public void onClick(View view) {
                 Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
                 // проверка на наличие разрешений для камеры
-                if (cameraIntent.resolveActivity(getActivity().getPackageManager()) != null && isWork == true)
+                if (cameraIntent.resolveActivity(getActivity().getPackageManager()) != null && isWork)
                 {
                     File photoFile = null;
                     try {
@@ -114,7 +114,7 @@ public class CameraFragment extends Fragment {
                     }
                     // генерирование пути к файлу на основе authorities
                     String authorities = getActivity().getApplicationContext().getPackageName() + ".fileprovider";
-                    imageUri = FileProvider.getUriForFile(getActivity().getApplicationContext(), authorities, photoFile);
+                    imageUri = FileProvider.getUriForFile(getActivity(), authorities, photoFile);
                     cameraIntent.putExtra(MediaStore.EXTRA_OUTPUT, imageUri);
                     startActivityForResult(cameraIntent, CAMERA_REQUEST);
                 }
@@ -126,7 +126,7 @@ public class CameraFragment extends Fragment {
     @Override
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == CAMERA_REQUEST && resultCode == Activity.RESULT_OK) {
+        if (requestCode == CAMERA_REQUEST && resultCode == getActivity().RESULT_OK) {
             imageView.setImageURI(imageUri);
         }
     }
