@@ -28,5 +28,17 @@
             android:id="@+id/musicPlayerFragment"
             android:icon="@android:drawable/ic_media_play"
             android:title="Music" />
+        <item
+            android:id="@+id/sensorsFragment"
+            android:icon="@android:drawable/editbox_background"
+            android:title="Sensors" />
+        <item
+            android:id="@+id/cameraFragment"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Camera" />
+        <item
+            android:id="@+id/audioRecordFragment"
+            android:icon="@android:drawable/presence_audio_online"
+            android:title="Audio Record" />
     </group>
 </menu>
