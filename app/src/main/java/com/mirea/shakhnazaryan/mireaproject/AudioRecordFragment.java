@@ -94,7 +94,7 @@ public class AudioRecordFragment extends Fragment {
         Button stopButton = view.findViewById(R.id.stopButton);
 
         mediaRecorder = new MediaRecorder();
-        isWork = hasPermissions(getActivity().getApplicationContext(), PERMISSIONS);
+        isWork = hasPermissions(getActivity(), PERMISSIONS);
         if (!isWork) {
             ActivityCompat.requestPermissions(getActivity(), PERMISSIONS,
                     REQUEST_CODE_PERMISSION);
@@ -165,34 +165,25 @@ public class AudioRecordFragment extends Fragment {
     }
 
     private void startRecording() throws IOException {
-        // проверка доступности sd - карты
+        // Проверка доступности sd - карты
         String state = Environment.getExternalStorageState();
         if (Environment.MEDIA_MOUNTED.equals(state) ||
                 Environment.MEDIA_MOUNTED_READ_ONLY.equals(state)) {
             Log.d(TAG, "sd-card success");
-            // выбор источника звука
-            assert false;
+            // Выбор источника звука
             mediaRecorder.setAudioSource(MediaRecorder.AudioSource.MIC);
-            // выбор формата данных
+            // Выбор формата данных
             mediaRecorder.setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP);
-            // выбор кодека
+            // Выбор кодека
             mediaRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.AMR_NB);
             if (audioFile == null) {
-                // Создаём директорию для файла на устройстве
-                String root = Environment.getExternalStorageDirectory().toString();
-                File myDir = new File(root + "/saved_audio");
-                if (!myDir.exists()){myDir.mkdirs();}
-                // Создаём файл
-                String fileName = "audio.3gp";
-                audioFile = new File(myDir, fileName);
-                // Чтобы видеть наш новый файл в gallery view
-                getActivity().sendBroadcast(new Intent(Intent.ACTION_MEDIA_MOUNTED,
-                        Uri.parse("file://" + Environment.getExternalStorageDirectory())));
+                // Создание файла
+                audioFile = new File(getActivity().getExternalFilesDir(Environment.DIRECTORY_MUSIC), "audio.3gp");
             }
             mediaRecorder.setOutputFile(audioFile.getAbsolutePath());
             mediaRecorder.prepare();
             mediaRecorder.start();
-            Toast.makeText(getActivity(), "Recording started!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getActivity(), "Запись включена", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -202,7 +193,7 @@ public class AudioRecordFragment extends Fragment {
             mediaRecorder.stop();
             mediaRecorder.reset();
             mediaRecorder.release();
-            Toast.makeText(getActivity().getApplicationContext(), "You are not recording right now!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getActivity(), "You are not recording right now!", Toast.LENGTH_SHORT).show();
         }
     }
 
