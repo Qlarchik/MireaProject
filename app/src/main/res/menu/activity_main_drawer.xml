@@ -40,5 +40,13 @@
             android:id="@+id/audioRecordFragment"
             android:icon="@android:drawable/presence_audio_online"
             android:title="Audio Record" />
+        <item
+            android:id="@+id/settingsFragment"
+            android:icon="@android:drawable/ic_menu_manage"
+            android:title="Settings" />
+        <item
+            android:id="@+id/historyFragment"
+            android:icon="@android:drawable/ic_menu_recent_history"
+            android:title="History" />
     </group>
 </menu>

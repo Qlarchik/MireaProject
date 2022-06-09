@@ -52,4 +52,14 @@
         android:name="com.mirea.shakhnazaryan.mireaproject.AudioRecordFragment"
         android:label="fragment_audio_record"
         tools:layout="@layout/fragment_audio_record" />
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.mirea.shakhnazaryan.mireaproject.SettingsFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" />
+    <fragment
+        android:id="@+id/historyFragment"
+        android:name="com.mirea.shakhnazaryan.mireaproject.HistoryFragment"
+        android:label="fragment_history"
+        tools:layout="@layout/fragment_history" />
 </navigation>
