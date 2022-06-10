@@ -8,18 +8,22 @@
         <entry key="..\:/AndroidProjects/MireaProject/app/src/main/res/layout/add_history.xml" value="0.371875" />
         <entry key="..\:/AndroidProjects/MireaProject/app/src/main/res/layout/app_bar_main.xml" value="0.371875" />
         <entry key="..\:/AndroidProjects/MireaProject/app/src/main/res/layout/content_main.xml" value="0.34692028985507245" />
+        <entry key="..\:/AndroidProjects/MireaProject/app/src/main/res/layout/firebase_auth.xml" value="0.371875" />
         <entry key="..\:/AndroidProjects/MireaProject/app/src/main/res/layout/fragment_audio_record.xml" value="0.27898550724637683" />
+        <entry key="..\:/AndroidProjects/MireaProject/app/src/main/res/layout/fragment_authorization.xml" value="0.371875" />
         <entry key="..\:/AndroidProjects/MireaProject/app/src/main/res/layout/fragment_calculate.xml" value="0.33" />
         <entry key="..\:/AndroidProjects/MireaProject/app/src/main/res/layout/fragment_camera.xml" value="0.371875" />
         <entry key="..\:/AndroidProjects/MireaProject/app/src/main/res/layout/fragment_gallery.xml" value="0.371875" />
         <entry key="..\:/AndroidProjects/MireaProject/app/src/main/res/layout/fragment_history.xml" value="0.371875" />
         <entry key="..\:/AndroidProjects/MireaProject/app/src/main/res/layout/fragment_music_player.xml" value="0.371875" />
+        <entry key="..\:/AndroidProjects/MireaProject/app/src/main/res/layout/fragment_network_resource.xml" value="0.22192028985507245" />
         <entry key="..\:/AndroidProjects/MireaProject/app/src/main/res/layout/fragment_sensors.xml" value="0.3578125" />
         <entry key="..\:/AndroidProjects/MireaProject/app/src/main/res/layout/fragment_settings.xml" value="0.27898550724637683" />
         <entry key="..\:/AndroidProjects/MireaProject/app/src/main/res/layout/fragment_slideshow.xml" value="0.371875" />
         <entry key="..\:/AndroidProjects/MireaProject/app/src/main/res/layout/fragment_web_view.xml" value="0.25" />
         <entry key="..\:/AndroidProjects/MireaProject/app/src/main/res/layout/history_cell.xml" value="0.371875" />
         <entry key="..\:/AndroidProjects/MireaProject/app/src/main/res/layout/nav_header_main.xml" value="0.371875" />
+        <entry key="..\:/AndroidProjects/MireaProject/app/src/main/res/menu-v23/activity_main_drawer.xml" value="0.371875" />
         <entry key="..\:/AndroidProjects/MireaProject/app/src/main/res/menu/activity_main_drawer.xml" value="0.371875" />
         <entry key="..\:/AndroidProjects/MireaProject/app/src/main/res/menu/main.xml" value="0.371875" />
         <entry key="..\:/AndroidProjects/MireaProject/app/src/main/res/xml/filepaths.xml" value="0.27898550724637683" />
